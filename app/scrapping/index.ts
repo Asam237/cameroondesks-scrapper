@@ -11,7 +11,8 @@ const cvWriter = createObjectCsvWriter({
     { id: "index", title: "Rank" },
     { id: "title", title: "Title" },
     { id: "date", title: "Date" },
-    { id: "description", title: "Daily Average" },
+    { id: "description", title: "Description" },
+    { id: "link", title: "Link" },
   ],
 });
 
@@ -20,6 +21,7 @@ interface IVancancy {
   title: string;
   date: any;
   description: string;
+  link: string;
 }
 
 AxiosInstance.get(url)
@@ -32,11 +34,13 @@ AxiosInstance.get(url)
       const title: string = $(elem).find(".entery-category-box > h2").text();
       const date: string = $(elem).find(".post-snip > span").text();
       const description: string = $(elem).find(".entery-snipt > p").text();
+      const link: any = $(elem).find(".entery-snipt > a").attr("href");
       vacancies.push({
         index: parseInt(String(i)) + 1,
         title,
         date,
         description,
+        link,
       });
     });
     //console.log(vacancies);
