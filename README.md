@@ -27,7 +27,7 @@ From your terminal:
 
 ```sh
 yarn
-yarn dev
+yarn start
 ```
 
 ## Authors
