@@ -30,6 +30,10 @@ yarn
 yarn start
 ```
 
+## Demo
+
+![Screenshot from 2024-02-23 06-36-12](https://github.com/Asam237/cameroondesks-scrapper/assets/34966088/04339c5e-ad74-4fe2-857d-797e30cec8d1)
+
 ## Authors
 
 This project is maintained by:
