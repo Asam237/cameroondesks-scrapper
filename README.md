@@ -8,7 +8,7 @@ Cameroon Desks Scraping
 
 This starter kit is composed of:
 
-- [Node.js](https://nodejs.org/en)
+- [Node.js 18](https://nodejs.org/en)
   <br/>
 - [TypeScript](https://www.typescriptlang.org/)
   <br/>
