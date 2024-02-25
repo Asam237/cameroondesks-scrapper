@@ -3,6 +3,8 @@ import cheerio from "cheerio";
 import fs from "fs";
 import { createObjectCsvWriter } from "csv-writer";
 import ProgressBar from "progress";
+import * as path from "path";
+import { convertCsvToXlsx } from "@aternus/csv-to-xlsx";
 
 const cvWriter = createObjectCsvWriter({
   path: "./app/datas/vacancies.csv",
@@ -58,7 +60,11 @@ async function scrapePage(url: string): Promise<any> {
 const initialUrl = "https://www.cameroondesks.com/";
 scrapePage(initialUrl)
   .then((items) => {
-    cvWriter.writeRecords(items);
+    cvWriter.writeRecords(items).then(() => {
+      const source = path.join(__dirname, "..", "datas", "vacancies.csv");
+      const destination = path.join(__dirname, "..", "datas", "vacancies.xlsx");
+      convertCsvToXlsx(source, destination);
+    });
     const jsonContent = JSON.stringify(items);
     fs.writeFile("./app/datas/vacancies.json", jsonContent, "utf8", (error) => {
       if (error) console.log(error);
