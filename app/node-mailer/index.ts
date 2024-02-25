@@ -1,6 +1,8 @@
 import * as nodemailer from "nodemailer";
 import * as path from "path";
 import readline from "readline";
+import dotenv from "dotenv";
+dotenv.config();
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -8,8 +10,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: "abbasaliaboubakar@gmail.com",
-    pass: "welfexgsiyhlqwqi",
+    user: process.env.mail,
+    pass: process.env.pass,
   },
 });
 
@@ -21,7 +23,7 @@ const inquirer = readline.createInterface({
 const sendEmail = (address: string) => {
   transporter.sendMail(
     {
-      from: "abbasaliaboubakar@gmail.com",
+      from: process.env.mail,
       to: address,
       subject: "All available job opportunities in Cameroon.",
       text: "Receive your job opportunities notification in Cameroon. Feel free to share this email with anyone who might find it interesting.",

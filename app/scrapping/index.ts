@@ -5,6 +5,8 @@ import { createObjectCsvWriter } from "csv-writer";
 import ProgressBar from "progress";
 import * as path from "path";
 import { convertCsvToXlsx } from "@aternus/csv-to-xlsx";
+import dotenv from "dotenv";
+dotenv.config();
 
 const cvWriter = createObjectCsvWriter({
   path: "./app/datas/vacancies.csv",
