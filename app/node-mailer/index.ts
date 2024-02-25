@@ -27,8 +27,8 @@ const sendEmail = (address: string) => {
       text: "Receive your job opportunities notification in Cameroon. Feel free to share this email with anyone who might find it interesting.",
       attachments: [
         {
-          filename: "vacancies.csv",
-          path: path.join(__dirname, "..", "datas", "vacancies.csv"),
+          filename: "vacancies.xlsx",
+          path: path.join(__dirname, "..", "datas", "vacancies.xlsx"),
         },
       ],
     },
