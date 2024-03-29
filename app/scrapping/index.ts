@@ -76,3 +76,5 @@ scrapePage(initialUrl)
   .catch((error) => {
     console.error("Error:", error);
   });
+
+  
